@@ -1,0 +1,320 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --border: #1f2330;
+  --accent: #e8622a;
+  --accent2: #f0a04b;
+  --text: #e8eaf0;
+  --muted: #7a7f94;
+  --heading-font: 'DM Serif Display', serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-weight: 300;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/* Hero */
+header {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 40px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(232,98,42,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.logo-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(232,98,42,0.35);
+}
+
+.logo-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+header h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+header h1 span {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #b0b4c8;
+  margin-top: 14px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Layout */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 52px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease forwards;
+}
+
+section:nth-child(1)  { animation-delay: 0.05s; }
+section:nth-child(2)  { animation-delay: 0.10s; }
+section:nth-child(3)  { animation-delay: 0.15s; }
+section:nth-child(4)  { animation-delay: 0.20s; }
+section:nth-child(5)  { animation-delay: 0.25s; }
+section:nth-child(6)  { animation-delay: 0.30s; }
+section:nth-child(7)  { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+h2 {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 0.975rem;
+  color: #b0b4c8;
+  margin-bottom: 14px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+/* Card style for key points */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-top: 20px;
+}
+
+.card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #b0b4c8;
+}
+
+.card ul li::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Highlight box */
+.highlight {
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  background: rgba(232,98,42,0.06);
+  border-radius: 0 8px 8px 0;
+  margin-top: 16px;
+}
+
+.highlight p {
+  font-size: 0.9rem;
+  color: #c8ccdc;
+  margin: 0;
+}
+
+/* Contact */
+.contact-box {
+  background: linear-gradient(135deg, rgba(232,98,42,0.1), rgba(240,160,75,0.06));
+  border: 1px solid rgba(232,98,42,0.25);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-top: 20px;
+}
+
+.contact-box a {
+  color: var(--accent2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0 0 52px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 32px 40px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+/* Back link (policy pages) */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover { color: var(--accent2); }
+
+/* Home page choice buttons */
+.choices {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.choice-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.choices .choice-card:nth-child(1) { animation-delay: 0.08s; }
+.choices .choice-card:nth-child(2) { animation-delay: 0.16s; }
+
+.choice-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232,98,42,0.45);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+.choice-card .logo-icon { margin-bottom: 4px; }
+
+.choice-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0;
+}
+
+.choice-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.choice-card .go {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 600px) {
+  header { padding: 60px 24px 44px; }
+  main { padding: 44px 24px 80px; }
+  .choices { padding: 44px 24px 80px; }
+  .card, .contact-box { padding: 20px; }
+}

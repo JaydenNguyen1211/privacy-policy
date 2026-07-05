@@ -3,350 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy – Smart Video Player</title>
+  <title>Privacy Policies</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0d0f14;
-      --surface: #13161e;
-      --border: #1f2330;
-      --accent: #e8622a;
-      --accent2: #f0a04b;
-      --text: #e8eaf0;
-      --muted: #7a7f94;
-      --heading-font: 'DM Serif Display', serif;
-      --body-font: 'DM Sans', sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--body-font);
-      font-weight: 300;
-      line-height: 1.8;
-      min-height: 100vh;
-    }
-
-    /* Hero */
-    header {
-      position: relative;
-      overflow: hidden;
-      padding: 80px 40px 60px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(232,98,42,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .logo-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 32px rgba(232,98,42,0.35);
-    }
-
-    .logo-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-    }
-
-    header h1 {
-      font-family: var(--heading-font);
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      margin-bottom: 10px;
-    }
-
-    header h1 span {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 8px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    /* Layout */
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 60px 40px 100px;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 52px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.5s ease forwards;
-    }
-
-    section:nth-child(1)  { animation-delay: 0.05s; }
-    section:nth-child(2)  { animation-delay: 0.10s; }
-    section:nth-child(3)  { animation-delay: 0.15s; }
-    section:nth-child(4)  { animation-delay: 0.20s; }
-    section:nth-child(5)  { animation-delay: 0.25s; }
-    section:nth-child(6)  { animation-delay: 0.30s; }
-    section:nth-child(7)  { animation-delay: 0.35s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    h2 {
-      font-family: var(--heading-font);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-
-    p {
-      font-size: 0.975rem;
-      color: #b0b4c8;
-      margin-bottom: 14px;
-    }
-
-    p:last-child { margin-bottom: 0; }
-
-    /* Card style for key points */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-top: 20px;
-    }
-
-    .card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .card ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-      color: #b0b4c8;
-    }
-
-    .card ul li::before {
-      content: '▸';
-      color: var(--accent);
-      font-size: 0.8rem;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    /* Highlight box */
-    .highlight {
-      border-left: 3px solid var(--accent);
-      padding: 16px 20px;
-      background: rgba(232,98,42,0.06);
-      border-radius: 0 8px 8px 0;
-      margin-top: 16px;
-    }
-
-    .highlight p {
-      font-size: 0.9rem;
-      color: #c8ccdc;
-      margin: 0;
-    }
-
-    /* Contact */
-    .contact-box {
-      background: linear-gradient(135deg, rgba(232,98,42,0.1), rgba(240,160,75,0.06));
-      border: 1px solid rgba(232,98,42,0.25);
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-top: 20px;
-    }
-
-    .contact-box a {
-      color: var(--accent2);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
-
-    /* Divider */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 0 52px;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 32px 40px;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    @media (max-width: 600px) {
-      header { padding: 60px 24px 44px; }
-      main { padding: 44px 24px 80px; }
-      .card, .contact-box { padding: 20px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
 <header>
-  <div class="logo-icon">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 5v14l11-7L8 5z"/>
-    </svg>
-  </div>
-  <h1>Smart Video <span>Player</span></h1>
-  <p class="meta">Privacy Policy &nbsp;·&nbsp; Effective: April 19, 2026</p>
+  <h1>Privacy <span>Policies</span></h1>
+  <p class="subtitle">Choose an app below to read its privacy policy.</p>
 </header>
 
-<main>
+<nav class="choices">
 
-  <section>
-    <div class="section-label">Overview</div>
-    <h2>Our Commitment to Your Privacy</h2>
-    <p>
-      This Privacy Policy describes how <strong>Smart Video Player</strong> ("we", "our", or "the app") handles information when you use our mobile application. We take your privacy seriously and are committed to being fully transparent about our practices.
-    </p>
-    <div class="highlight">
-      <p>
-        <strong>Short version:</strong> Smart Video Player only accesses videos and images stored on your device to provide playback functionality. We do not collect, store, or share your personal data with any third parties.
-      </p>
+  <a class="choice-card" href="smart-video-player.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5v14l11-7L8 5z"/>
+      </svg>
     </div>
-  </section>
+    <h2>Smart Video Player</h2>
+    <p>How Smart Video Player handles your media and privacy.</p>
+    <span class="go">View policy →</span>
+  </a>
 
-  <hr/>
-
-  <section>
-    <div class="section-label">Data Access</div>
-    <h2>What the App Accesses</h2>
-    <p>
-      Smart Video Player requests permission to access your device's local storage solely to read and play video and image files you choose to open within the app.
-    </p>
-    <div class="card">
-      <ul>
-        <li>Local video files stored on your device</li>
-        <li>Local image files stored on your device</li>
-        <li>No access to your camera, microphone, contacts, or location</li>
-        <li>No access to files outside your media library</li>
-      </ul>
+  <a class="choice-card" href="smart-music-player.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+      </svg>
     </div>
-  </section>
+    <h2>Smart Music Player</h2>
+    <p>How Smart Music Player handles your audio and privacy.</p>
+    <span class="go">View policy →</span>
+  </a>
 
-  <section>
-    <div class="section-label">Data Collection</div>
-    <h2>Information We Do Not Collect</h2>
-    <p>
-      We do not collect, transmit, or store any personal information. Specifically:
-    </p>
-    <div class="card">
-      <ul>
-        <li>We do not collect your name, email address, or any identifying information</li>
-        <li>We do not upload your videos or images to any server</li>
-        <li>We do not track your usage behavior or viewing history</li>
-        <li>We do not use analytics or crash reporting tools that identify you personally</li>
-        <li>We do not serve advertisements or share data with advertising networks</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-label">Third Parties</div>
-    <h2>Third-Party Services</h2>
-    <p>
-      Smart Video Player does not integrate any third-party SDKs, analytics services, or advertising networks that collect user data. All media playback is handled entirely on your device.
-    </p>
-  </section>
-
-  <section>
-    <div class="section-label">Children</div>
-    <h2>Children's Privacy</h2>
-    <p>
-      Smart Video Player is not directed at children under the age of 13. We do not knowingly collect any information from children. Since our app does not collect any personal data from any user, no additional measures are required.
-    </p>
-  </section>
-
-  <section>
-    <div class="section-label">Updates</div>
-    <h2>Changes to This Policy</h2>
-    <p>
-      We may update this Privacy Policy from time to time. When we do, we will revise the effective date at the top of this page. We encourage you to review this page periodically to stay informed about how we protect your privacy.
-    </p>
-    <p>
-      Continued use of the app after any changes constitutes your acceptance of the updated policy.
-    </p>
-  </section>
-
-  <section>
-    <div class="section-label">Contact</div>
-    <h2>Contact Us</h2>
-    <p>
-      If you have any questions or concerns about this Privacy Policy, please reach out to us:
-    </p>
-    <div class="contact-box">
-      <p>📧 Email: <a href="mailto:nqhuy.vn95@gmail.com">nqhuy.vn95@gmail.com</a></p>
-      <p style="margin-top:8px; font-size:0.85rem; color:#7a7f94;">We will respond to your inquiry within 7 business days.</p>
-    </div>
-  </section>
-
-</main>
+</nav>
 
 <footer>
-  &copy; 2026 Smart Video Player &nbsp;·&nbsp; All rights reserved
+  &copy; 2026 &nbsp;·&nbsp; All rights reserved
 </footer>
 
 </body>
